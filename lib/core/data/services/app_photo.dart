@@ -21,7 +21,7 @@ class AppPhotoService {
     );
 
     if (pickedFile != null) {
-      _image = await _goToImageCropper(File(pickedFile.path));
+      _image = (await _goToImageCropper(File(pickedFile.path)));
       return _image;
     } else {
       print('No image selected.');
@@ -39,7 +39,7 @@ class AppPhotoService {
     );
 
     if (pickedFile != null) {
-      _image = await _goToImageCropper(File(pickedFile.path));
+      _image = (await _goToImageCropper(File(pickedFile.path)));
       return _image;
     } else {
       print('No image selected.');
@@ -48,22 +48,21 @@ class AppPhotoService {
   }
 
   /* <---- Image Cropper ----> */
-  static Future<File> _goToImageCropper(File? imageFile) async {
-    File? croppedFile = await ImageCropper.cropImage(
-        sourcePath: imageFile!.path,
-        aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
-        androidUiSettings: const AndroidUiSettings(
-          toolbarTitle: 'Prefered Size 500x500',
-          toolbarColor: AppColors.primaryColor,
-          toolbarWidgetColor: Colors.white,
-          initAspectRatio: CropAspectRatioPreset.original,
-          lockAspectRatio: true,
-        ),
-        iosUiSettings: const IOSUiSettings(
-          title: 'Cropper',
-        ));
-    return croppedFile!;
+  static Future<File?> _goToImageCropper(File? imageFile) async {
+    File? croppedFile;
+
+    final CroppedFile? cropped = await ImageCropper().cropImage(
+      sourcePath: imageFile!.path,
+      aspectRatio: const CropAspectRatio(ratioX: 1, ratioY: 1),
+    );
+
+    if (cropped != null) {
+      croppedFile = File(cropped.path);
+    }
+
+    return croppedFile;
   }
+
 
   /// Gives a File From an url
   /// If the file is in cache you will get the cached file
@@ -95,11 +94,12 @@ class AppPhotoService {
   }
 
   static Future<File> _writeFileToDiskIsolated(
-      Map<String, dynamic> data) async {
+      Map<String, dynamic> data, TypeSendPort<dynamic> sendPort) async {
     File _theFile = File(data['path'] + 'imagetest');
     _theFile.writeAsBytes(data['response']);
     return _theFile;
   }
+
 
   /// Get Image From Cache
   static Future<File?> getImageFromCache(String imageUrl) async {

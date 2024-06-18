@@ -39,7 +39,6 @@ class AppUser {
       'userFace': userFace,
       'deviceIDToken': deviceIDToken,
       'address': address,
-      'isAdmin': isAdmin,
     };
   }
 

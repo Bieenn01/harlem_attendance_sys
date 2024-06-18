@@ -1,37 +1,65 @@
 {
   "project_info": {
-    "project_number": "806724864097",
-    "firebase_url": "https://face-attendance-dcec9-default-rtdb.firebaseio.com",
-    "project_id": "face-attendance-dcec9",
-    "storage_bucket": "face-attendance-dcec9.appspot.com"
+    "project_number": "1035442472174",
+    "firebase_url": "https://harlem-storage2024-default-rtdb.firebaseio.com",
+    "project_id": "harlem-storage2024",
+    "storage_bucket": "harlem-storage2024.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:806724864097:android:b8bac05c56fda859c90220",
+        "mobilesdk_app_id": "1:1035442472174:android:25d68bd93384409403dfff",
         "android_client_info": {
-          "package_name": "com.ttv.faceattendance"
+          "package_name": "com.example.face_rec_1"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "806724864097-3tuidlb9q49d1dt7fugeo1ueu0t15h8u.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCagJATVdbhpGfGjmrkmLQQlpBOEPzoBfE"
+          "current_key": "AIzaSyBybXZnfssXy6AT7gLt2EBruAq8A17jQRA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "806724864097-3tuidlb9q49d1dt7fugeo1ueu0t15h8u.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035442472174:android:3212a685c092b0fe03dfff",
+        "android_client_info": {
+          "package_name": "com.ttv.faceattendance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBybXZnfssXy6AT7gLt2EBruAq8A17jQRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035442472174:android:d6d6a090919d9fe103dfff",
+        "android_client_info": {
+          "package_name": "id.dickysatria.sistem_presensi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBybXZnfssXy6AT7gLt2EBruAq8A17jQRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }

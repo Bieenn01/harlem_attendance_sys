@@ -119,7 +119,6 @@ class AppThemes {
       ),
     ),
     colorScheme: ColorScheme.fromSwatch(
-      primaryColorDark: AppColors.primaryColor,
       primarySwatch: AppUiUtil.generateMaterialColor(AppColors.primaryColor),
       accentColor: AppColors.accentColor,
       brightness: Brightness.dark,

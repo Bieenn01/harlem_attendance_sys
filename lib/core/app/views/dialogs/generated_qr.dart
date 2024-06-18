@@ -36,7 +36,7 @@ class GenerateQRDialog extends StatelessWidget {
               color: AppColors.placeholderColor,
               thickness: 0.3,
             ),
-            QrImage(
+            QrImageView(
               padding: const EdgeInsets.all(5),
               data: data,
               version: QrVersions.auto,

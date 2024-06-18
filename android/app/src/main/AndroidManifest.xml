@@ -10,9 +10,10 @@
         android:label="FaceOnLive"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyAT7wzBH5AWw_GpYTnNjXCO_DuhQr3_4zs"/>
+               android:value="AIzaSyBybXZnfssXy6AT7gLt2EBruAq8A17jQR"/>
         <activity
             android:name=".MainActivity"
+            android:networkSecurityConfig="@xml/network_security_config"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
