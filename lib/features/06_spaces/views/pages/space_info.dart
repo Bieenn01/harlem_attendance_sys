@@ -65,7 +65,7 @@ class SpaceInfoScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Text('Total Members: ${space.memberList.length}'),
+            Text('Total Members: ${space.appMembers.length}'),
             AppSizes.hGap20,
             /* <---- Actions Button ----> */
             SizedBox(
