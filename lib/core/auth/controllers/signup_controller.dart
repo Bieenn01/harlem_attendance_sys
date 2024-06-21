@@ -33,17 +33,19 @@ class SignUpController extends GetxController {
 
       String _newUserID = _credintial.user!.uid;
       await _collectionReference.doc(_newUserID).set(
-            AppUser(
-              name: userName,
-              email: email,
-              phone: null,
-              holiday: 6,
-              notification: true,
-              userProfilePicture: null,
-              userFace: null,
-              deviceIDToken: _idTokenOfDevice,
-            ).toMap,
-          );
+        AppUser(
+          name: userName,
+          email: email,
+          phone: null,
+          holiday: 6,
+          notification: true,
+          userProfilePicture: null,
+          userFace: null,
+          deviceIDToken: _idTokenOfDevice,
+          isAdmin: false,
+        ).toMap(), // <-- Call toMap() method to get the actual Map<String, dynamic>
+      );
+
       await _credintial.user!.sendEmailVerification();
       await Get.dialog(const EmailSentSuccessfullDialog());
       Get.find<LoginController>().isAdmin = false;

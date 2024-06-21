@@ -11,6 +11,7 @@ class AppUser {
   String? userProfilePicture;
   String? userID;
   String? address;
+  bool isAdmin;
 
   /// This is used for the login verification, profile picture is for showcase
   String? userFace;
@@ -20,6 +21,7 @@ class AppUser {
     required this.email,
     required this.holiday,
     required this.notification,
+    required this.isAdmin,
     this.userProfilePicture,
     this.userFace,
     this.phone,
@@ -28,7 +30,7 @@ class AppUser {
     this.address,
   });
 
-  Map<String, dynamic> toMap({bool isAdmin = false}) {
+  Map<String, dynamic> toMap() {
     return {
       'name': name,
       'email': email,
@@ -39,25 +41,38 @@ class AppUser {
       'userFace': userFace,
       'deviceIDToken': deviceIDToken,
       'address': address,
+      'isAdmin': false, // Ensure isAdmin defaults to false
     };
   }
 
+
   /// Use it when you fetch data from firebase. it returns a APPUSER objects
   factory AppUser.fromDocumentSnap(DocumentSnapshot documentSnapshot) {
-    Map<String, dynamic> map = documentSnapshot.data() as Map<String, dynamic>;
-    return AppUser(
-      name: map['name'],
-      email: map['email'],
-      phone: map['phone'],
-      holiday: map['holiday'],
-      notification: map['notification'],
-      userProfilePicture: map['userProfilePicture'],
-      userFace: map['userFace'],
-      deviceIDToken: map['deviceIDToken'],
-      address: map['address'],
-      userID: documentSnapshot.id,
-    );
+    if (documentSnapshot.exists) {
+      Map<String, dynamic>? data = documentSnapshot.data() as Map<String, dynamic>?;
+      if (data != null) {
+        return AppUser(
+          name: data['name'],
+          email: data['email'],
+          phone: data['phone'],
+          holiday: data['holiday'],
+          notification: data['notification'],
+          userProfilePicture: data['userProfilePicture'],
+          userFace: data['userFace'],
+          deviceIDToken: data['deviceIDToken'],
+          address: data['address'],
+          isAdmin: data['isAdmin'] ?? false,
+          userID: documentSnapshot.id,
+        );
+      } else {
+        throw Exception('Document data was null');
+      }
+    } else {
+      throw Exception('Document does not exist');
+    }
   }
+
+
 
   @override
   String toString() {

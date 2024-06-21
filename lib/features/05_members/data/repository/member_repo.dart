@@ -201,22 +201,42 @@ class MemberRepositoryImpl extends MemberRepository {
   }
 
   @override
-  Future<Either<ServerFailure, void>> addAppMember(
-      {required String userID, required String adminID}) async {
+  Future<Either<ServerFailure, void>> addAppMember({
+    required String userID,
+    required String adminID,
+  }) async {
     try {
-      final _docRef = await appMemberCollection.doc(adminID).get();
-      if (_docRef.exists) {
-        _docRef.reference.update({});
+      final docRef = appMemberCollection.doc(adminID);
+      final docSnapshot = await docRef.get();
+
+      if (docSnapshot.exists) {
+        final data = docSnapshot.data() as Map<String, dynamic>?; // Cast to Map<String, dynamic> or null
+
+        if (data != null) {
+          final List<dynamic> dynamicMembers = data['appMembers'] ?? []; // Fetch as List<dynamic>
+          final List<String> currentMembers = dynamicMembers.map((member) => member.toString()).toList(); // Convert to List<String>
+
+          if (!currentMembers.contains(userID)) {
+            currentMembers.add(userID);
+            await docRef.update({'appMembers': currentMembers});
+          }
+        } else {
+          throw FirebaseException(
+            code: 'data-null',
+            message: 'Document data was null or empty',
+            plugin: '',
+          );
+        }
       } else {
-        _docRef.reference.set({
-          'appMembers': FieldValue.arrayUnion([userID])
-        });
+        await docRef.set({'appMembers': [userID]});
       }
-      return const Right(null);
-    } on FirebaseException catch (_) {
-      return Left(ServerFailure(errorMessage: 'Failed To Add App Member'));
+
+      return const Right(null); // Return success
+    } on FirebaseException catch (e) {
+      return Left(ServerFailure(errorMessage: 'Failed To Add App Member: ${e.message}'));
     }
   }
+
 
   @override
   Future<Either<ServerFailure, void>> removeAppMember(
