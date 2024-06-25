@@ -27,6 +27,25 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:1035442472174:android:78d11dfe737bb70c03dfff",
+        "android_client_info": {
+          "package_name": "com.face_attendance_harlem_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBybXZnfssXy6AT7gLt2EBruAq8A17jQRA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:1035442472174:android:3212a685c092b0fe03dfff",
         "android_client_info": {
           "package_name": "com.ttv.faceattendance"

@@ -1,4 +1,4 @@
-package com.ttv.faceattendance
+package com.face_attendance_harlem_app
 import io.flutter.embedding.android.FlutterActivity
 import androidx.annotation.NonNull
 import io.flutter.embedding.engine.FlutterEngine

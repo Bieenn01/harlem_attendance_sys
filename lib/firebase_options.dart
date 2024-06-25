@@ -56,7 +56,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBybXZnfssXy6AT7gLt2EBruAq8A17jQRA',
-    appId: '1:1035442472174:android:3212a685c092b0fe03dfff',
+    appId: '1:1035442472174:android:78d11dfe737bb70c03dfff',
     messagingSenderId: '1035442472174',
     projectId: 'harlem-storage2024',
     databaseURL: 'https://harlem-storage2024-default-rtdb.firebaseio.com',
@@ -82,4 +82,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'harlem-storage2024.appspot.com',
     iosBundleId: 'com.abdulmomin.faceAttendance',
   );
+
 }
