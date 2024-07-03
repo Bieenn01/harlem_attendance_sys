@@ -58,7 +58,7 @@ class EntryPointUI extends StatelessWidget {
               backgroundColor: context.theme.cardColor,
               selectedLabelStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: context.textTheme.bodyText1!.fontSize,
+                fontSize: context.textTheme.bodyLarge!.fontSize,
               ),
               selectedItemColor: AppColors.primaryColor,
               // unselectedLabelStyle: TextStyle(color: Colors.grey),

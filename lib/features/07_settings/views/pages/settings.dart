@@ -24,7 +24,7 @@ class AdminSettingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Admin Setting', style: context.textTheme.headline6),
+        title: Text('Admin Setting', style: context.textTheme.titleLarge),
       ),
       body: SizedBox(
         width: Get.width,

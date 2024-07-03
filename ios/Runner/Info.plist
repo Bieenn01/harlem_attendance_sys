@@ -45,5 +45,9 @@
 	<string>To verify person</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>To work properly</string>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
 </dict>
 </plist>
