@@ -91,14 +91,14 @@ class _AddUserFaceDialogState extends State<AddUserFaceDialog> {
           AppSizes.hGap15,
           Text(
             'Please Verify',
-            style: Theme.of(context).textTheme.headline6?.copyWith(
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryColor,
                 ),
           ),
           Text(
             'We need you to verify your identity',
-            style: Theme.of(context).textTheme.caption,
+            style: Theme.of(context).textTheme.bodySmall,
           ),
           AppSizes.hGap15,
           Form(

@@ -46,7 +46,7 @@ class AppCustomListTile extends StatelessWidget {
             leading: leading ?? const Icon(Icons.person_rounded),
             title: Text(
               label ?? 'Add Text Here',
-              style: context.textTheme.bodyText1,
+              style: context.textTheme.bodyLarge,
             ),
             subtitle: isUpdating
                 ? Text(

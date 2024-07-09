@@ -71,13 +71,13 @@ class TitleAndSubtitle extends StatelessWidget {
         children: [
           Text(
             AppConfig.appName,
-            style: context.textTheme.bodyText2!.copyWith(
+            style: context.textTheme.bodyMedium!.copyWith(
               fontWeight: FontWeight.bold,
             ),
           ),
           Text(
             AppConfig.appSubtitle,
-            style: context.textTheme.caption,
+            style: context.textTheme.bodySmall,
           )
         ],
       ),

@@ -21,7 +21,7 @@ class AttendedUserListSection extends StatelessWidget {
           children: [
             Text(
               DateFormat.yMMMEd().format(DateTime.now()),
-              style: context.textTheme.caption,
+              style: context.textTheme.bodySmall,
             ),
             // Header
             GetBuilder<SpaceController>(

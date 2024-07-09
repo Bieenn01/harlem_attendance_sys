@@ -36,13 +36,13 @@ class UserInfoSection extends GetView<AppAdminController> {
         AppSizes.hGap10,
         Text(
           controller.currentUser.name,
-          style: context.textTheme.headline6!.copyWith(
+          style: context.textTheme.titleLarge!.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
         Text(
           controller.currentUser.email,
-          style: context.textTheme.bodyText1,
+          style: context.textTheme.bodyLarge,
         ),
         AppSizes.hGap10,
       ],
