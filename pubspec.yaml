@@ -65,3 +65,4 @@ flutter:
     - assets/images/illustration/
     - assets/lottie/
     - assets/mapstyle/
+    - shorebird.yaml
